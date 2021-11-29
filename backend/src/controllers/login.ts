@@ -4,6 +4,7 @@ class LoginController {
   readonly PATH = '/login';
 
   post(req: Request, res: Response) {
+    console.log(`[SERVER] ${req.ip} has requested /login`)
     const { body } = req;
 
     if (body?.email === 'teste@testes.com.br' && body?.password === 'teste123') {
