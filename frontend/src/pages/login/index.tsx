@@ -1,5 +1,7 @@
 import { FC, useState } from "react";
+import { Container } from "../../components/ui/Container";
 import loginService from "../../services/login-service";
+import { ConfirmContainer, FormContainer, InputContainer, LoginContainer } from "./styles";
 
 const Login: FC = () => {
   const [email, setEmail] = useState('');
@@ -10,19 +12,25 @@ const Login: FC = () => {
   };
 
   return (
-    <div>
-      <div>
-        Email:
-        <input onChange={(e) => setEmail(e.target.value)} value={email} />
-      </div>
-      <div>
-        Password:
-        <input onChange={(e) => setPassword(e.target.value)} value={password} />
-      </div>
-      <button onClick={onLoginClick}>
-        Login
-      </button>
-    </div>
+    <Container>
+      <LoginContainer>
+        <FormContainer>
+          <InputContainer>
+            Email:
+            <input onChange={(e) => setEmail(e.target.value)} value={email} />
+          </InputContainer>
+          <InputContainer>
+            Password:
+            <input onChange={(e) => setPassword(e.target.value)} value={password} />
+          </InputContainer>
+        </FormContainer>
+        <ConfirmContainer>
+          <button onClick={onLoginClick}>
+            Login
+          </button>
+        </ConfirmContainer>
+      </LoginContainer>
+    </Container>
   );
 }
 

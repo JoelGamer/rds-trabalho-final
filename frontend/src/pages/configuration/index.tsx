@@ -1,4 +1,6 @@
 import { FC, useEffect, useState } from "react";
+import { Container } from "../../components/ui/Container";
+import { ConfirmContainer, FormContainer, InputContainer, LoginContainer } from "./styles";
 
 const Configuration: FC = () => {
   const [serverIp, setServerIp] = useState('');
@@ -28,22 +30,25 @@ const Configuration: FC = () => {
   }, []);
 
   return (
-    <div>
-      <div>
-        Server IP:
-        <input onChange={(e) => setServerIp(e.target.value)} value={serverIp} />
-      </div>
-      <div>
-        Server Port:
-        <input onChange={(e) => setServerPort(e.target.value)} value={serverPort} />
-      </div>
-      <div>
-        Save Changes:
-        <button onClick={onSaveClick}>
-          Save
-        </button>
-      </div>
-    </div>
+    <Container>
+      <LoginContainer>
+        <FormContainer>
+          <InputContainer>
+            Server IP:
+            <input onChange={(e) => setServerIp(e.target.value)} value={serverIp} />
+          </InputContainer>
+          <InputContainer>
+            Server Port:
+            <input onChange={(e) => setServerPort(e.target.value)} value={serverPort} />
+          </InputContainer>
+        </FormContainer>
+        <ConfirmContainer>
+          <button onClick={onSaveClick}>
+            Save
+          </button>
+        </ConfirmContainer>
+      </LoginContainer>
+    </Container>
   );
 };
 

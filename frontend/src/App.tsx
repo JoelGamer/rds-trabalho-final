@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Header from "./components/navigation/header";
 import Configuration from "./pages/configuration";
 import Login from "./pages/login";
 
@@ -20,6 +21,7 @@ const App = () => {
 
   return (
     <BrowserRouter>
+      <Header routes={[{ title: 'Login', goto: '/login' }, { title: 'Configuration', goto: '/configuration' }]} />
       <Routes>
         <Route path="login" element={<Login />} />
         <Route path="configuration" element={<Configuration />} />
