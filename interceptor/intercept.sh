@@ -1,0 +1,1 @@
+sudo tcpdump -i eno1 -A host 192.168.0.10 | grep -E 'email|password|HTTP/1.1 200'

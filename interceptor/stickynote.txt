@@ -1,0 +1,5 @@
+Para lembrar pessoas do futuro
+
+ifconfig $INTERFACE
+route -n
+arp -n
